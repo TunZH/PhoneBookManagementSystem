@@ -36,7 +36,7 @@ public:
         while (true) {
             cout << "Enter gender (M/F): ";
             cin >> gender;
-            gender = toupper(gender); // Tự động viết hoa để dễ kiểm tra
+            gender = toupper(gender); 
             if (gender == 'M' || gender == 'F') break;
             cout << "[Error] Invalid gender! Please enter M or F.\n";
         }
@@ -49,6 +49,7 @@ public:
              << " | " << phone
              << " | " << city << "\n";
     }
+};
 //thanh vien 2
 class PhoneBook {
 private:
