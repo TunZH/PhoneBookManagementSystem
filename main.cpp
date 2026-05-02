@@ -15,10 +15,8 @@ class Contact {
 public:
     string firstName, lastName, city, phone;
     char gender;
-
     void inputDetails(string p) {
         phone = p; 
-
         do {
             cout << "Enter first name: ";
             getline(cin, firstName);
