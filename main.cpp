@@ -117,3 +117,41 @@ public:
         cout << "[Error] Not found.\n";
     }
 //thanh vien 3
+void deleteContact() {
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        string key;
+        cout << "Enter phone number to delete: ";
+        getline(cin, key);
+        auto it = find_if(list.begin(), list.end(), [&](const Contact &c) { return c.phone == key; });
+        if (it != list.end()) {
+            char confirm;
+            cout << "Are you sure you want to delete this contact? (Y/N): ";
+            cin >> confirm;
+            if (toupper(confirm) == 'Y') {
+                list.erase(it);
+                cout << "[Success] Contact deleted.\n";
+            } else {
+                cout << "Deletion canceled.\n";
+            }
+        } else {
+            cout << "Not found.\n";
+        }
+    } 
+    
+    void deleteAll() {
+        char confirm;
+        cout << "WARNING: Delete ALL contacts? (Y/N): ";
+        cin >> confirm;
+        if (toupper(confirm) == 'Y') {
+            list.clear();
+            cout << "[Success] All contacts wiped.\n";
+        }
+    }
+
+    void displayContacts() {
+        if (list.empty()) { cout << "No contacts.\n"; return; }
+        cout << "\n----- Contact List -----\nID. First Name | Last Name | Gender | Phone | City\n";
+        int i = 1;
+        for (auto &c : list) c.display(i++);
+        cout << "------------------------\n";
+    }
