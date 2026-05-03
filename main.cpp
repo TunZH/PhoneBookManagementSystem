@@ -1,4 +1,4 @@
-// Fix validation bugs (KAN-5, KAN-7, KAN-8)
+Fix: Resolve KAN-5, KAN-7, KAN-8
 // thanh vien 1
 #include <iostream>
 #include <vector>
