@@ -68,6 +68,7 @@ public:
         if (!file) return;
         Contact c;
         while (getline(file, c.firstName)) {
+            if (c.firstName.empty()) continue;
             getline(file, c.lastName);
             file >> c.gender;
             file.ignore();
