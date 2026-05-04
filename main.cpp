@@ -206,8 +206,7 @@ public:
     }
 };
 
-    
-void pauseScreen() {
+  void pauseScreen() {
     cout << "\nPress ENTER to continue...";
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
@@ -264,4 +263,4 @@ int main() {
     }
     pb.save();
     return 0;
-}
+}  
