@@ -16,7 +16,6 @@ class Contact {
 public:
     string firstName, lastName, city, phone;
     char gender;
-
     void inputDetails(string p) {
         phone = p; 
 
@@ -41,7 +40,7 @@ public:
             if (gender == 'M' || gender == 'F') break;
             cout << "[Error] Invalid gender! Please enter M or F.\n";
         }
-        cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+        cin.ignore(); 
     }
 
     void display(int id) const {
@@ -87,9 +86,9 @@ public:
     }
 
     void addContact() {
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.ignore();
         string p;
-        cout << "Enter phone number (Primary Key): ";
+        cout << "Enter phone number : ";
         getline(cin, p);
         if (p.empty() || isPhoneExists(p)) {
             cout << "[Error] Invalid or duplicate phone number!\n";
@@ -103,7 +102,7 @@ public:
 
     
     void updateContact() {
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.ignore();
         string key;
         cout << "Enter phone number to update: ";
         getline(cin, key);
@@ -117,9 +116,9 @@ public:
         cout << "[Error] Not found.\n";
     }
 
-    
+
     void deleteContact() {
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.ignore();
         string key;
         cout << "Enter phone number to delete: ";
         getline(cin, key);
@@ -159,7 +158,7 @@ public:
 
     
     void searchByName() {
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.ignore();
         string key;
         cout << "Enter name to search: ";
         getline(cin, key);
@@ -175,7 +174,7 @@ public:
     }
 
     void searchByPhone() {
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.ignore();
         string key;
         cout << "Enter phone to search: ";
         getline(cin, key);
@@ -191,7 +190,7 @@ public:
 
     
     void searchByCity() {
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.ignore();
         string key;
         cout << "Enter city to filter: ";
         getline(cin, key);
@@ -210,7 +209,7 @@ public:
     
 void pauseScreen() {
     cout << "\nPress ENTER to continue...";
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cin.ignore();
 }
 
 int main() {
